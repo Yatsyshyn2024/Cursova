@@ -1,0 +1,13 @@
+---
+version: '3.3'
+
+services:
+  translate_tgbot:
+    image: translate-tg_bot:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: translate-tg_bot
+    environment:
+      TRANSLATE_BOT_TOKEN: ${TRANSLATE_BOT_TOKEN}
